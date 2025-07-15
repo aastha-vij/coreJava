@@ -2,14 +2,26 @@ package coreJava;
 
 public class multiDimensionalArray {
 
-	public static int minimumOfArray(int arrayToSort[]) {
+	public static int minMaxOfArray(int arrayToSort[], Boolean findMinimum, Boolean findMaximum) {
 		int min = arrayToSort[0];
 		for (int i = 0; i < arrayToSort.length; i++) {
 			for (int j = i; j < arrayToSort.length; j++) {
-				if(arrayToSort[i] > arrayToSort[j]) {
-					min = arrayToSort[i];
-					arrayToSort[i] = arrayToSort[j];
-					arrayToSort[j]= min;
+				
+				if(findMinimum) {
+
+					if(arrayToSort[i] > arrayToSort[j]) {
+						min = arrayToSort[i];
+						arrayToSort[i] = arrayToSort[j];
+						arrayToSort[j]= min;
+					}
+				}
+				
+				if(findMaximum) {
+					if(arrayToSort[i] < arrayToSort[j]) {
+						min = arrayToSort[i];
+						arrayToSort[i] = arrayToSort[j];
+						arrayToSort[j]= min;
+					}					
 				}
 			}
 
@@ -38,11 +50,11 @@ public class multiDimensionalArray {
 	
 	public static void minimumNumInMultiDimensional_01(int num[][]) {
 		
-		int min = minimumOfArray(num[0]);
+		int min = minMaxOfArray(num[0], true, false);
 		
 		for (int i = 0; i < num.length; i++) {
 			
-			int rowMin = minimumOfArray(num[i]);
+			int rowMin = minMaxOfArray(num[i], true, false);
 			
 			if(rowMin<min) {
 				min = rowMin;	
@@ -55,7 +67,6 @@ public class multiDimensionalArray {
 		
 		int min = num[0][0];
 		for (int i = 0; i < num.length; i++) {
-			
 			for (int j = 0; j < num.length; j++) {
 				if(num[i][j]<min)
 					min=num[i][j];
@@ -64,20 +75,53 @@ public class multiDimensionalArray {
 		System.out.println(min);
 	}
 	
+	public static void maximumNumInMultiDimensional_01(int num[][]) {
+		
+		int max = minMaxOfArray(num[0], false, true);
+		
+		for (int i = 0; i < num.length; i++) {
+			
+			int rowMax = minMaxOfArray(num[i], false, true);
+			
+			if(rowMax > max) {
+				max = rowMax;	
+			}
+		} 	
+		System.out.println(max);
+	}
+	
+	public static void maximumNumInMultiDimensional_02(int num[][]) {
+		
+		int max = num[0][0];
+		for (int i = 0; i < num.length; i++) {
+			for (int j = 0; j < num.length; j++) {
+				if(num[i][j]>max)
+					max=num[i][j];
+			}
+		}
+		System.out.println(max);
+	}
+	
 	public static void main(String[] args) {
 		basicDeclaration();
 		
 		System.out.println("---------------");
 		
-		int num[][] = {{5, 0, 7}, {67, 3, 23}, {96, 75, 1}};
+		int num[][] = {{5, 0, 7}, {67, 3, 23}, {96, 75, -1}};
 		
 		minimumNumInMultiDimensional_01(num);
 		
 		System.out.println("---------------");
 		
 		minimumNumInMultiDimensional_02(num);
+		
+		System.out.println("---------------");
 
+		maximumNumInMultiDimensional_02(num);
+		
+		System.out.println("---------------");
 
+		maximumNumInMultiDimensional_02(num);
 	}
 
 }
