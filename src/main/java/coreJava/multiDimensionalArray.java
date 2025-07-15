@@ -36,8 +36,7 @@ public class multiDimensionalArray {
 		} 
 	}
 	
-	public static void minimumNumInMultiDimensional() {
-		int num[][] = {{5, 0, 7}, {-67, 3, 23}, {96, 75, 1}};
+	public static void minimumNumInMultiDimensional_01(int num[][]) {
 		
 		int min = minimumOfArray(num[0]);
 		
@@ -52,10 +51,32 @@ public class multiDimensionalArray {
 		System.out.println( min );
 	}
 	
+	public static void minimumNumInMultiDimensional_02(int num[][]) {
+		
+		int min = num[0][0];
+		for (int i = 0; i < num.length; i++) {
+			
+			for (int j = 0; j < num.length; j++) {
+				if(num[i][j]<min)
+					min=num[i][j];
+			}
+		}
+		System.out.println(min);
+	}
+	
 	public static void main(String[] args) {
 		basicDeclaration();
+		
 		System.out.println("---------------");
-		minimumNumInMultiDimensional();
+		
+		int num[][] = {{5, 0, 7}, {67, 3, 23}, {96, 75, 1}};
+		
+		minimumNumInMultiDimensional_01(num);
+		
+		System.out.println("---------------");
+		
+		minimumNumInMultiDimensional_02(num);
+
 
 	}
 
