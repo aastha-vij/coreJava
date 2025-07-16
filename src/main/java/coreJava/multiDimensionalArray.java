@@ -2,25 +2,22 @@ package coreJava;
 
 public class multiDimensionalArray {
 
-	public static int minMaxOfArray(int arrayToSort[], Boolean findMinimum, Boolean findMaximum) {
-		int minMax = arrayToSort[0];
-		for (int i = 0; i < arrayToSort.length; i++) {
-			for (int j = i; j < arrayToSort.length; j++) {
+	public static int sortAndReturnMinOrMax(int arrayToSort[], Boolean findMinimum) {
+	    int[] arr = arrayToSort.clone();
+	    
+		int minMax = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i; j < arr.length; j++) {
 
-				if(arrayToSort[i] > arrayToSort[j]) {
-					minMax = arrayToSort[i];
-					arrayToSort[i] = arrayToSort[j];
-					arrayToSort[j] = minMax;
+				if(arr[i] > arr[j]) {
+					minMax = arr[i];
+					arr[i] = arr[j];
+					arr[j] = minMax;
 				}
 			}
-
 		}
 		
-		if(findMinimum)
-			return arrayToSort[0];
-
-		else
-			return arrayToSort[arrayToSort.length-1];
+	 return findMinimum ? arr[0] : arr[arr.length-1];
 	}
 	
 	public static void basicDeclaration() {
@@ -42,80 +39,89 @@ public class multiDimensionalArray {
 		} 
 	}
 	
-	public static void minimumNumInMultiDimensional_01(int num[][]) {
+	public static int minimumNumInMultiDimensional_01(int num[][]) {
 		
-		int min = minMaxOfArray(num[0], true, false);
+		int min = sortAndReturnMinOrMax(num[0], true);
 		
 		for (int i = 0; i < num.length; i++) {
 			
-			int rowMin = minMaxOfArray(num[i], true, false);
+			int rowMin = sortAndReturnMinOrMax(num[i], true);
 			
 			if(rowMin<min) {
 				min = rowMin;	
 			}
 		} 	
-		System.out.println(min);
+		return min;
 	}
 	
-	public static void minimumNumInMultiDimensional_02(int num[][]) {
+	public static int minimumNumInMultiDimensional_02(int num[][]) {
 		
 		int min = num[0][0];
 		for (int i = 0; i < num.length; i++) {
-			for (int j = 0; j < num.length; j++) {
+			for (int j = 0; j < num[i].length; j++) {
 				if(num[i][j]<min)
 					min=num[i][j];
 			}
 		}
-		System.out.println(min);
+		return min;
 	}
 	
-	public static void maximumNumInMultiDimensional_01(int num[][]) {
+	public static int maximumNumInMultiDimensional_01(int num[][]) {
 		
-		int max = minMaxOfArray(num[0], false, true);
+		int max = sortAndReturnMinOrMax(num[0], false);
 		
 		for (int i = 0; i < num.length; i++) {
 			
-			int rowMax = minMaxOfArray(num[i], false, true);
+			int rowMax = sortAndReturnMinOrMax(num[i], false);
 			
 			if(rowMax > max) {
 				max = rowMax;	
 			}
 		} 	
-		System.out.println(max);
+		return max;
 	}
 	
-	public static void maximumNumInMultiDimensional_02(int num[][]) {
+	public static int maximumNumInMultiDimensional_02(int num[][]) {
 		
 		int max = num[0][0];
 		for (int i = 0; i < num.length; i++) {
-			for (int j = 0; j < num.length; j++) {
+			for (int j = 0; j < num[i].length; j++) {
 				if(num[i][j]>max)
 					max=num[i][j];
 			}
 		}
-		System.out.println(max);
+		return max;
 	}
+	
 	
 	public static void main(String[] args) {
 		basicDeclaration();
 		
 		System.out.println("---------------");
 		
-		int num[][] = {{5, 0, 7}, {67, -3, 23}, {964, 75, -1}};
+		int num[][] ={  {5, 	0,		7}, 
+						{67, 	3, 		23}, 
+						{96, 	75, 	1}
+					 };
 		
-		minimumNumInMultiDimensional_01(num);
+		
+		System.out.println(minimumNumInMultiDimensional_01(num));
 		
 		System.out.println("---------------");
 		
-		minimumNumInMultiDimensional_02(num);
+		System.out.println(minimumNumInMultiDimensional_02(num));
 		
 		System.out.println("---------------");
 
-		maximumNumInMultiDimensional_01(num);
+		System.out.println(maximumNumInMultiDimensional_01(num));
 		
 		System.out.println("---------------");
 
-		maximumNumInMultiDimensional_02(num);
+		System.out.println(maximumNumInMultiDimensional_02(num));
+		
+		System.out.println("---------------");
+		
+
 	}
 
 }
