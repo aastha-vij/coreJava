@@ -1,7 +1,27 @@
+# Java class files
 *.class
+
+# Eclipse-specific files
+.settings/
+.project
+.classpath
+
+# VS Code settings
+.vscode/
+
+# Build directories
 bin/
 build/
+out/
 
-.classpath
-.project
-.settings/
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Others
+*.jar
+*.war
+*.ear
