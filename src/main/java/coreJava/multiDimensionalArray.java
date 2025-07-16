@@ -94,6 +94,29 @@ public class multiDimensionalArray {
 	}
 	
 	
+	public static int minimumInRowMaximumInColumn(int num[][]) {
+		
+		int min = num[0][0];
+		int minCol = 0;
+		
+		for (int i = 0; i < num.length; i++) {
+			for ( int j = 0; j < num[i].length; j++) {
+				if(num[i][j]<min) {
+					min=num[i][j];
+					minCol = j;
+				}
+			}
+		}
+
+		int max = num[0][minCol];
+	    for (int i = 1; i < num.length; i++) {
+	        if (num[i][minCol] > max) {
+	            max = num[i][minCol];
+	        }
+	    }
+		return max;
+	}
+	
 	public static void main(String[] args) {
 		basicDeclaration();
 		
@@ -121,7 +144,7 @@ public class multiDimensionalArray {
 		
 		System.out.println("---------------");
 		
-
+		System.out.println(minimumInRowMaximumInColumn(num));
 	}
 
 }
