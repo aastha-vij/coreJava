@@ -1,6 +1,6 @@
 package coreJava;
 
-public class A03_NestedForLoop {
+public class _003_NestedForLoop {
 
 	public static void invertedPyramid() {
 		int temp = 1;

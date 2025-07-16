@@ -1,6 +1,6 @@
 package coreJava;
 
-public class multiDimensionalArray {
+public class _004_MultiDimensionalArray {
 
 	public static int sortAndReturnMinOrMax(int arrayToSort[], Boolean findMinimum) {
 	    int[] arr = arrayToSort.clone();
@@ -93,7 +93,6 @@ public class multiDimensionalArray {
 		return max;
 	}
 	
-	
 	public static int minimumInRowMaximumInColumn(int num[][]) {
 		
 		int min = num[0][0];
@@ -118,6 +117,7 @@ public class multiDimensionalArray {
 	}
 	
 	public static void main(String[] args) {
+		
 		basicDeclaration();
 		
 		System.out.println("---------------");

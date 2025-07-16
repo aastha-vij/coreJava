@@ -1,6 +1,6 @@
 package coreJava;
 
-public class A01_Firstclass {
+public class _001_Firstclass {
 
 	public void getData() {
 		System.out.println("Inside getData Method in First Class");
@@ -9,10 +9,10 @@ public class A01_Firstclass {
 	public static void main(String[] args) {
 		System.out.println("welcome");
 
-		A01_Firstclass fn= new A01_Firstclass();
+		_001_Firstclass fn= new _001_Firstclass();
 		fn.getData();
 		
-		A02_Secondclass sc = new A02_Secondclass();
+		_002_Secondclass sc = new _002_Secondclass();
 		sc.setData();
 	}
 
