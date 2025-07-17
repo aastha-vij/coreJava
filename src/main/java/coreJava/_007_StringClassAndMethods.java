@@ -14,11 +14,11 @@ public class _007_StringClassAndMethods {
 		System.out.println(a.substring(9));
 		System.out.println(a.concat(b));
 		System.out.println(a.length());
-		System.out.println(a.trim());
-		
+		System.out.println(a.trim());		
 		String[] arr = a.split("-");
 		System.out.println(arr[0]);
 		System.out.println(a.replace("S","Z" ));
+
 	}
 
 }
