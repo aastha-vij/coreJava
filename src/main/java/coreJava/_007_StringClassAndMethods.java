@@ -14,11 +14,24 @@ public class _007_StringClassAndMethods {
 		System.out.println(a.substring(9));
 		System.out.println(a.concat(b));
 		System.out.println(a.length());
-		System.out.println(a.trim());		
+		System.out.println(a.trim());
+		
 		String[] arr = a.split("-");
 		System.out.println(arr[0]);
 		System.out.println(a.replace("S","Z" ));
-
+		
+		// == and .equals()
+		
+		String str1 = "Some Text";
+		String str2 = "Some Text";
+		System.out.println(str1==str2);
+		System.out.println(str1.equals(str2));
+		
+		String str3 = new String("Some Text");
+		String str4 = new String("Some Text");
+		System.out.println(str3==str4);
+		System.out.println(str3.equals(str4));
+		
 	}
 
 }
