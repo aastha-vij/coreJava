@@ -4,6 +4,10 @@ public class _011_AustralianTraffic implements _010_InterfaceCentralTraffic{
 
 	public static void main(String[] args) {
 		
+		_010_InterfaceCentralTraffic at = new _011_AustralianTraffic(); // initialize class object
+		at.redStop(); 
+		at.greenGo();
+		at.YellowWait();
 	}
 
 	/*Add interface via 'implements'
@@ -12,19 +16,21 @@ public class _011_AustralianTraffic implements _010_InterfaceCentralTraffic{
 	
 	@Override
 	public void greenGo() {
-		// TODO Auto-generated method stub
-		
+
+		System.out.println("Green: Go");
 	}
 
 	@Override
 	public void redStop() {
-		// TODO Auto-generated method stub
+
+		System.out.println("Red: Stop");
 		
 	}
 
 	@Override
 	public void YellowWait() {
-		// TODO Auto-generated method stub
+
+		System.out.println("Yellow: Wait");
 		
 	}
 
