@@ -23,11 +23,11 @@ public class _007_StringClassAndMethods {
 		// == and .equals()
 		
 		String str1 = "Some Text";
-		String str2 = "Some Text";
-		System.out.println(str1==str2);
-		System.out.println(str1.equals(str2));
+		String str2 = "Some Text"; // Literal is referenced to same str1
+		System.out.println(str1==str2); // compares reference  
+		System.out.println(str1.equals(str2)); // compares content
 		
-		String str3 = new String("Some Text");
+		String str3 = new String("Some Text"); // new reference for each object
 		String str4 = new String("Some Text");
 		System.out.println(str3==str4);
 		System.out.println(str3.equals(str4));
