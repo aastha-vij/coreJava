@@ -4,6 +4,8 @@ public class _015_InheritanceParent {
 
 	String color = "Red";
 	
+	int i = 10;
+	
 	public void gear() {
 		System.out.println("Gear implementation");
 	}
