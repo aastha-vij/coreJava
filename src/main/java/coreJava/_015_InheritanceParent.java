@@ -2,6 +2,8 @@ package coreJava;
 
 public class _015_InheritanceParent {
 
+	String color = "Red";
+	
 	public void gear() {
 		System.out.println("Gear implementation");
 	}
