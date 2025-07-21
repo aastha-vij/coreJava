@@ -6,7 +6,7 @@ public class _017_FunctionOverloading{
 	 * 2. To remove duplicate method, either:
 	 * 		- Argument count should be different
 	 * 		- Argument data type should be different
-	 * 		
+	 * 3. Eg: Payments() via: Credit, Debit, UPI
 	 */
 
 	public void getData(int a) {
@@ -28,8 +28,6 @@ public class _017_FunctionOverloading{
 		obj.getData(5);
 		obj.getData("Str");
 		obj.getData(5, 6);
-
 	}
-
 
 }
