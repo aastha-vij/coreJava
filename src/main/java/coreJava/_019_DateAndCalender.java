@@ -21,11 +21,10 @@ public class _019_DateAndCalender {
 		Calendar cal = Calendar.getInstance();
 		System.out.println(dateFormat2.format(cal.getTime()));
 		
-		System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+		System.out.println(cal.get(Calendar.DAY_OF_WEEK)); // Sunday: 0, Monday: 1,...
 		System.out.println(cal.get(Calendar.DAY_OF_WEEK_IN_MONTH));
 		System.out.println(cal.get(Calendar.AM_PM));
 		System.out.println(cal.get(Calendar.MINUTE));
-
 
 	}
 
