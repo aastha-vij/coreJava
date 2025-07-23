@@ -9,7 +9,7 @@ public class _015_InheritanceParent {
 	String name = "Parent String name";
 
 	public void gear() {
-		System.out.println("Gear implementation");
+		System.out.println("Gear implementation Parent class");
 	}
 	
 	public void breaks() {
@@ -22,6 +22,10 @@ public class _015_InheritanceParent {
 	
 	public void audio() {
 		System.out.println("Audio implementation");
+	}
+	
+	public _015_InheritanceParent() {
+		System.out.println("Parent class constructor");
 	}
 	
 	public static void main(String[] args) {

@@ -16,6 +16,17 @@ public class _016_InheritanceChild extends _015_InheritanceParent{
 		System.out.println(super.name); // refers to parent class
 	}
 	
+	public void gear() {
+		super.gear();
+		System.out.println("Gear implementation child class");
+	}
+	
+	public _016_InheritanceChild() {
+		super(); // super should always be at first line
+		System.out.println("Child class constructor");
+	}
+	///////////////////////// Super Keyword/////////////////////
+
 	public static void main(String[] args) {
 		
 		_016_InheritanceChild obj = new _016_InheritanceChild();
@@ -23,6 +34,7 @@ public class _016_InheritanceChild extends _015_InheritanceParent{
 		obj.gear();
 		obj.engine();
 		obj.color();
+		obj.gear();
 		
 		obj.getStringData();
 		System.out.println(obj.i);
