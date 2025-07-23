@@ -6,6 +6,8 @@ public class _015_InheritanceParent {
 	
 	int i = 10;
 	
+	String name = "Parent String name";
+
 	public void gear() {
 		System.out.println("Gear implementation");
 	}

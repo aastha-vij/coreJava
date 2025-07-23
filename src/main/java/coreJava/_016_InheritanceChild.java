@@ -7,6 +7,15 @@ public class _016_InheritanceChild extends _015_InheritanceParent{
 		System.out.println(color);
 	}
 	
+	///////////////////////// Super Keyword/////////////////////
+	
+	String name = "Child String name";
+	
+	public void getStringData() {
+		System.out.println(name);
+		System.out.println(super.name); // refers to parent class
+	}
+	
 	public static void main(String[] args) {
 		
 		_016_InheritanceChild obj = new _016_InheritanceChild();
@@ -15,6 +24,7 @@ public class _016_InheritanceChild extends _015_InheritanceParent{
 		obj.engine();
 		obj.color();
 		
+		obj.getStringData();
 		System.out.println(obj.i);
 		
 		_015_InheritanceParent obj2 = new _015_InheritanceParent();
