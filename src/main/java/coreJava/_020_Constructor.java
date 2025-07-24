@@ -25,12 +25,20 @@ public class _020_Constructor {
 		System.out.println("Method getData");
 	}
 	
+	////////////////////////this Keyword///////////////////////
+	
+	int value = 5;
+	public void getData(int value) {
+		this.value= value; // 'this.value' refers to the instance variable
+		System.out.println(value); // 'value' refers to the constructor parameter
+	}
+	
+	///////////////////////////this Keyword///////////////////////
 	
 	public static void main(String[] args) {
 
 		_020_Constructor obj  = new _020_Constructor(); // When object is created, constructor is called
 		_020_Constructor obj2  = new _020_Constructor(5, 6); // Parametarized Constructor
-		_020_Constructor obj3  = new _020_Constructor(""); // Parametarized Constructor
-
+		_020_Constructor obj3  = new _020_Constructor("Hello"); // Parametarized Constructor
 	}
 }
