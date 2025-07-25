@@ -7,8 +7,13 @@ public class _021_StaticVariables {
 	String address;
 	// Instance variables
 
-	static String city = "Some City"; // Doesn't depend on instance - Class variable
-	static int a = 0; // shared with updated value in instance
+	static String city; // Doesn't depend on instance - Class variable
+	static int a; // shared with updated value in instance
+	
+	static {
+		city = "Some city";
+		a = 0;		
+	}
 	
 	public _021_StaticVariables(String name, String address) {
 		// Local variables --> name, address
