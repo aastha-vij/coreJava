@@ -5,7 +5,10 @@ public class _021_StaticVariables {
 	// Instance variables
 	String name;
 	String address;
-	static String city = "Some City";
+	// Instance variables
+
+	static String city = "Some City"; // Doesn't depend on instance - Class variable
+	static int a = 0;
 	
 	public _021_StaticVariables(String name, String address) {
 		// Local variables --> name, address
@@ -13,6 +16,8 @@ public class _021_StaticVariables {
 		
 		this.name = name;
 		this.address = address;
+		a++;
+		System.out.println(a);
 	}
 	
 	public void getAddress() {
