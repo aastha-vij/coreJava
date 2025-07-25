@@ -8,7 +8,7 @@ public class _021_StaticVariables {
 	// Instance variables
 
 	static String city = "Some City"; // Doesn't depend on instance - Class variable
-	static int a = 0;
+	static int a = 0; // shared with updated value in instance
 	
 	public _021_StaticVariables(String name, String address) {
 		// Local variables --> name, address
@@ -28,6 +28,10 @@ public class _021_StaticVariables {
 		System.out.println(name);
 	}
 
+	////// static methods accept static variables
+	public static void getCity() { 
+		System.out.println(city);
+	}
 	
 	public static void main(String[] args) {
 
@@ -38,7 +42,10 @@ public class _021_StaticVariables {
 		_021_StaticVariables obj2 = new _021_StaticVariables("Some Other Name", "Some Other Address");
 		obj2.getName();
 		obj2.getAddress();
-
+		
+		_021_StaticVariables.getCity(); // static is independent of object (Belongs to class)
+		getCity();
+		System.out.println(a=3);
 	}
 
 }
