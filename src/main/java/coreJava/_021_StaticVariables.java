@@ -48,7 +48,8 @@ public class _021_StaticVariables {
 		obj2.getName();
 		obj2.getAddress();
 		
-		_021_StaticVariables.getCity(); // static is independent of object (Belongs to class)
+		// static is independent of object (Belongs to class)
+		_021_StaticVariables.getCity(); 
 		getCity();
 		System.out.println(a=3);
 	}
