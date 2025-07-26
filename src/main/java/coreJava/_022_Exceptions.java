@@ -27,6 +27,13 @@ public class _022_Exceptions {
 		catch(Exception e){
 			System.out.println("Generic: "+e); 
 		}
+		
+		finally {
+			
+			//Executes irrespective of Exceptions
+			// Always executed except JVM stopped forcefully
+			System.out.println("Finally Block");
+		}
 	}
 
 }
