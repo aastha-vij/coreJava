@@ -18,6 +18,10 @@ public class _023_ArrayList {
 		al.remove(al.get(2));
 		System.out.println(al);
 		System.out.println(al.contains(9));
+		
+		System.out.println(al.indexOf(9));
+		System.out.println(al.isEmpty());
+		System.out.println(al.size());
 
 	}
 
