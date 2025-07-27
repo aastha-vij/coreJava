@@ -30,7 +30,7 @@ public class _022_Exceptions {
 		
 		finally {
 			
-			//Executes irrespective of Exceptions
+			// Executes irrespective of Exceptions
 			// Always executed except JVM stopped forcefully
 			System.out.println("Finally Block");
 		}
