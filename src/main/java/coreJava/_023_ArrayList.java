@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class _023_ArrayList {
 
+	 /* List Collection - ArrayList, LinkedList, Vector: Accepts duplicates
+	 	Array: Fixed size
+	 	ArrayList: Dynamic size
+	 */
 	public static void main(String[] args) {
 
 		ArrayList<Integer> al = new ArrayList<Integer>();
