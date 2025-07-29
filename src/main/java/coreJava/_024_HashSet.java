@@ -19,4 +19,6 @@ public class _024_HashSet {
 		System.out.println(hs.size());
 	}
 
+	//Iterator
+
 }
