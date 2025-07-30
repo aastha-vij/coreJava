@@ -1,6 +1,7 @@
 package coreJava;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class _024_HashSet {
 
@@ -17,8 +18,15 @@ public class _024_HashSet {
 		System.out.println(hs.remove("test02"));
 		System.out.println(hs.isEmpty());
 		System.out.println(hs.size());
-	}
+		hs.add("test02");
+		
+		System.out.println("--------ITERATOR-------");
+		Iterator<String> i = hs.iterator();
+		while(i.hasNext()) {
+			System.out.println(i.next());
 
-	//Iterator
+		}
+
+	}
 
 }
