@@ -1,28 +1,26 @@
 package coreJava;
 
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class _025_MapInterface {
+public class _026_Hashtable {
 
 	public static void main(String[] args) {
 
-		/* 
-		 * Key : Value pairs
-		 * Async and Not Thread Safe (Keeps updating)
-		   Allows null:  1 key : Any number of values
-		   Iterates using iterator
-		*/
-		HashMap<Integer, String> hm = new HashMap<Integer, String >();
+		/* Key : Value pairs
+		 * sync and Thread Safe (Wait till resources are released by other resource)
+		 * Doesn't allow any null keys nor values
+		   Iterates using enumerator
+		*/		
+		
+		Hashtable<Integer, String> hm = new Hashtable<Integer, String >();
 		
 		hm.put(0, "Hello");
 		hm.put(1, "Bie");
 		hm.put(2, "Morning");
 		hm.put(3, "Evening");
-		hm.put(4, "");
-		hm.put(5, null);
 
 		System.out.println(hm);
 		System.out.println(hm.get(2));
