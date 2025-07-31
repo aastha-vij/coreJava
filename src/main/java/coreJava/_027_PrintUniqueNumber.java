@@ -16,22 +16,31 @@ public class _027_PrintUniqueNumber {
 		 * Find unique number - 9 (Non repeated)
 		 */
 		
+
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		for (int i = 0; i < a.length; i++) {
 			al.add(a[i]);
 		}
-		System.out.println(al);
+		do {
 
-		int first = al.get(0);
-		int count = 1;
-		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-		
-		for (int i = 0; i < al.size(); i++) {
-			if(first==al.get(i)) {
-				hm.put(al.get(i), count++);
-			}	
-		}
-		System.out.println(hm);
+			System.out.println("al: "+al);
+
+			int first = al.get(0);
+			int count = 1;
+			HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+			
+			for (int i = 0; i < al.size(); i++) {
+				if(first==al.get(i)) {
+					hm.put(al.get(i), count++);
+					al.remove(al.get(i));
+				}
+			}
+			System.out.println("hm: "+hm);
+		}	
+
+		while(al.size()!=0);
+
+
 
 		}
 	}
