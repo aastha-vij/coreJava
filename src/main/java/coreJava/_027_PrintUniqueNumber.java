@@ -15,32 +15,33 @@ public class _027_PrintUniqueNumber {
 		 * 9 is repeated 1 times 
 		 * Find unique number - 9 (Non repeated)
 		 */
-		
 
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		for (int i = 0; i < a.length; i++) {
 			al.add(a[i]);
 		}
+		
 		do {
-
-			System.out.println("al: "+al);
-
-			int first = al.get(0);
-			int count = 1;
+			
 			HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+			int first = al.get(0);
+			int count = 0;
 			
 			for (int i = 0; i < al.size(); i++) {
-				if(first==al.get(i)) {
-					hm.put(al.get(i), count++);
-					al.remove(al.get(i));
+				if(first == al.get(i)) {
+					count++;
 				}
+				
+				hm.put(first, count);
 			}
-			System.out.println("hm: "+hm);
-		}	
-
+			
+			al.removeIf(n -> n == first);
+			
+			if(count==1)
+				System.out.println("Unique: "+first);
+		}
+		
 		while(al.size()!=0);
-
-
 
 		}
 	}
