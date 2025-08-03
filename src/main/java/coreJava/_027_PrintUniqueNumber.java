@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class _027_PrintUniqueNumber {
+
+	// via nested loop
 	
 	public static void doWhileHashMap(int[] a) {
 		
