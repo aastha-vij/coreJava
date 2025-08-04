@@ -4,8 +4,31 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class _027_PrintUniqueNumber {
+	
+	public static void viaNestedLoop(int[] a) {
+		
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		for (int i = 0; i < a.length; i++) {
+			
+			int count = 0;
+			
+			if(!al.contains(a[i])) {
+				al.add(a[i]);
+				count++;
 
-	// via nested loop
+				for (int j = i+1; j < a.length; j++) {
+					if(a[i]==a[j]) {
+						count++;
+					}
+				}
+				
+				if(count==1) {
+					System.out.println("Unique: "+a[i]);
+
+				}
+			}
+		}
+	}
 	
 	public static void doWhileHashMap(int[] a) {
 		
@@ -49,6 +72,7 @@ public class _027_PrintUniqueNumber {
 		 */
 
 		doWhileHashMap(a);
+		viaNestedLoop(a);
 		
 		}
 	}
