@@ -1,13 +1,18 @@
 package coreJava;
 
-public class _028_FinalKeyword {
+final class _028_FinalKeyword { // final classes can't be inherited
 
+
+	final void getData() {
+		// final methods can't be overridden
+	}
+	
 	public static void main(String[] args) {
 
 		final int a = 5;
-		a = a++; // not allowed to update
-		int i = 4;
-		System.out.println(a);
+		a = a++; // final variables are not allowed to update
+		a = 4;
+		
 		
 	}
 
