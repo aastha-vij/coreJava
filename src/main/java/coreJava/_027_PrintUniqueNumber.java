@@ -3,7 +3,7 @@ package coreJava;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class _027_PrintUniqueNumber {
+public class _027_PrintUniqueNumber{
 	
 	public static void viaNestedLoop(int[] a) {
 		
