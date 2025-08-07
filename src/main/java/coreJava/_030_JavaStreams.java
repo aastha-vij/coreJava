@@ -1,10 +1,10 @@
 package coreJava;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class _030_JavaStreams {
 
-	
 	public static int countNamesWithStartingLetter(ArrayList<String> names) {
 
 		int count = 0;
@@ -13,6 +13,15 @@ public class _030_JavaStreams {
 				count++;
 			}
 		}
+		return count;
+	}
+	
+	public static long streamNamesAndCount(ArrayList<String> names) {
+		long count = names.stream()
+		.filter(s-> s.startsWith("A"))
+		.peek(s -> System.out.println(s))
+		.count();
+
 		return count;
 	}
 	
@@ -27,6 +36,10 @@ public class _030_JavaStreams {
 		names.add("Ram");
 		
 		System.out.println(countNamesWithStartingLetter(names));
+		
+		System.out.println("-------------------------------------");
+		
+		System.out.println(streamNamesAndCount(names));
 
 	}
 }
