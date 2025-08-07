@@ -16,6 +16,15 @@ public class _030_JavaStreams {
 		return count;
 	}
 	
+	public static void streamNamesGreaterLength(ArrayList<String> names) {
+		long count =names.stream()
+		.filter(s-> s.length()>4)
+		.peek(s -> System.out.println(s))
+		.count();
+	    System.out.println("Count: " + count);
+
+	}
+	
 	public static long streamNamesAndCount(ArrayList<String> names) {
 		long count = names.stream()
 		.filter(s-> s.startsWith("A"))
@@ -24,7 +33,6 @@ public class _030_JavaStreams {
 
 		return count;
 	}
-	
 	public static void main(String[] args) {
 		// Count number of names starting with letter 'A'
 		
@@ -40,6 +48,10 @@ public class _030_JavaStreams {
 		System.out.println("-------------------------------------");
 		
 		System.out.println(streamNamesAndCount(names));
+		
+		System.out.println("-------------------------------------");
+
+		streamNamesGreaterLength(names);
 
 	}
 }
