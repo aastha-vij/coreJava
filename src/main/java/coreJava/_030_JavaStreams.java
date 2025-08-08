@@ -33,6 +33,14 @@ public class _030_JavaStreams {
 
 		return count;
 	}
+	
+	public static void streamNamesLimit(ArrayList<String> names) {
+		names.stream()
+		.filter(s-> s.length()>4)
+		.filter(s-> s.startsWith("A")).limit(1)
+		.forEach(s -> System.out.println(s));
+	}
+	
 	public static void main(String[] args) {
 		// Count number of names starting with letter 'A'
 		
@@ -52,6 +60,9 @@ public class _030_JavaStreams {
 		System.out.println("-------------------------------------");
 
 		streamNamesGreaterLength(names);
+		System.out.println("-------------------------------------");
+
+		streamNamesLimit(names);
 
 	}
 }
