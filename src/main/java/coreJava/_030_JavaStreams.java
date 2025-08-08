@@ -41,6 +41,14 @@ public class _030_JavaStreams {
 		.forEach(s -> System.out.println(s));
 	}
 	
+	
+	public static void streamNamesInCaps(ArrayList<String> names) {
+		names.stream()
+		.filter(s->s.endsWith("m"))
+		.map(s->s.toUpperCase())
+		.forEach(s-> System.out.println(s));
+	}
+	
 	public static void main(String[] args) {
 		// Count number of names starting with letter 'A'
 		
@@ -60,9 +68,16 @@ public class _030_JavaStreams {
 		System.out.println("-------------------------------------");
 
 		streamNamesGreaterLength(names);
+		
 		System.out.println("-------------------------------------");
 
 		streamNamesLimit(names);
+		
+		System.out.println("-------------------------------------");
+
+		// Print names ends with letter 'm' in UpperCase
+		streamNamesInCaps(names);
+
 
 	}
 }
