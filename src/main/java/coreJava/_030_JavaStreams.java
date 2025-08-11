@@ -1,6 +1,8 @@
 package coreJava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class _030_JavaStreams {
@@ -88,5 +90,12 @@ public class _030_JavaStreams {
 
 		// Print names starts with letter 'a' in Sorting
 		streamNamesInSort(names);
+
+		System.out.println("-------------------------------------");
+
+		List<String> names2 = Arrays.asList("Abhishek", "Rama", "Ajita");
+		
+		Stream<String> concatedStream = Stream.concat(names.stream(), names2.stream());
+		concatedStream.sorted().forEach(s-> System.out.println(s));
 	}
 }
