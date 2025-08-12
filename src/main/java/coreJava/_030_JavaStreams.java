@@ -3,6 +3,7 @@ package coreJava;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class _030_JavaStreams {
@@ -103,5 +104,16 @@ public class _030_JavaStreams {
 		// Check if Adam is present
 		Boolean isPresent = concatedStream.anyMatch(s->s.equalsIgnoreCase("Adam"));
 		System.out.println(isPresent);
+
+		System.out.println("-------------------------------------");
+
+		//convert Stream to List
+		List<String> streamToList = concatedStream
+		.filter(s->s.startsWith("A"))
+		.sorted()
+		.map(s->s.toUpperCase())
+		.collect(Collectors.toList());
+		
+		System.out.println(streamToList.get(0));
 	}
 }
