@@ -115,5 +115,17 @@ public class _030_JavaStreams {
 		.collect(Collectors.toList());
 		
 		System.out.println(streamToList.get(0));
+
+		System.out.println("-------------------------------------");
+		
+		// Sort and Print unique number(s)
+		List<Integer> values = Arrays.asList(6, 7, 7, 6, 8, 8, 8, 0, 3, 2, 2);
+		List<Integer> listValues = values.stream()
+		.distinct()
+		.sorted()
+		.collect(Collectors.toList());
+		
+		System.out.println(listValues);
+		System.out.println(listValues.get(4));
 	}
 }
