@@ -97,5 +97,11 @@ public class _030_JavaStreams {
 		
 		Stream<String> concatedStream = Stream.concat(names.stream(), names2.stream());
 		concatedStream.sorted().forEach(s-> System.out.println(s));
+
+		System.out.println("-------------------------------------");
+
+		// Check if Adam is present
+		Boolean isPresent = concatedStream.anyMatch(s->s.equalsIgnoreCase("Adam"));
+		System.out.println(isPresent);
 	}
 }
