@@ -13,6 +13,7 @@ public class _002_findDuplicatesInArray {
 
 		System.out.print(_01_Using_Set(nums));
 		System.out.print(_02_BFA(nums));
+		_03_UsingHashSet(nums);
 	}
 
 	public static Set<Integer> _01_Using_Set(int[] nums){
@@ -46,5 +47,17 @@ public class _002_findDuplicatesInArray {
 			}
 		}
 		return duplicate;
+	}
+	
+	public static void _03_UsingHashSet(int[]nums){
+	    // Time Complexity: O(n)
+	    // Space Complexity: O(n)
+		
+		HashSet<Integer> hs = new HashSet<>();
+
+		for (int i : nums) {
+			if(!hs.add(i))
+				System.out.print(i+ " ");
+		}		
 	}
 }
