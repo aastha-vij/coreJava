@@ -25,7 +25,6 @@ public class _030_JavaStreams {
 		.peek(s -> System.out.println(s))
 		.count();
 	    System.out.println("Count: " + count);
-
 	}
 	
 	public static long streamNamesAndCount(ArrayList<String> names) {
@@ -43,7 +42,6 @@ public class _030_JavaStreams {
 		.filter(s-> s.startsWith("A")).limit(1)
 		.forEach(s -> System.out.println(s));
 	}
-	
 	
 	public static void streamNamesInCaps(ArrayList<String> names) {
 		names.stream()
