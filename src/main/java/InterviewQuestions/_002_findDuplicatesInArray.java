@@ -16,6 +16,9 @@ public class _002_findDuplicatesInArray {
 	}
 
 	public static Set<Integer> _01_Using_Set(int[] nums){
+	    // Time Complexity: O(n)
+	    // Space Complexity: O(n)
+
 		HashMap<Integer, Boolean> hm = new HashMap<>();
 		Set<Integer> duplicate = new HashSet<>();
 		
@@ -29,6 +32,8 @@ public class _002_findDuplicatesInArray {
 	}
 	
 	public static List<Integer> _02_BFA(int[]nums) {
+	    // Time Complexity: O(n^2)
+	    // Space Complexity: O(k) where k = number of duplicates
 
 		List<Integer> duplicate = new ArrayList<>();
 		for (int i = 0; i < nums.length; i++) {
