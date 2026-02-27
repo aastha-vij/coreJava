@@ -1,16 +1,21 @@
 package InterviewQuestions;
 
+import java.util.HashMap;
+
 public class _003_firstNonRepeatingChar {
 
 	public static void main(String[] args) {
 
 		String str = "haabfebecd";
 		System.out.println(_01_BFA(str));
+		System.out.println(_02_UsingHashMap(str));
 
 	}
 	
 	public static char _01_BFA(String str) {
-
+		// Time complexity: O(n^2)
+		// Space complexity: O(1)
+		
 		for (int i = 0; i < str.length(); i++) {
 			Boolean isRepeated = false;
 			for (int j = 0; j < str.length(); j++) {
@@ -22,6 +27,19 @@ public class _003_firstNonRepeatingChar {
 			if(!isRepeated)
 				return str.charAt(i);
 		}
+		return '\0';
+	}
+	
+	public static char _02_UsingHashMap(String str) {
+		// Time complexity: O(n)
+		// Space complexity: O(n)
+		
+		HashMap<Character, Integer> hm = new HashMap<>();
+		for (char ch : str.toCharArray())
+			hm.put(ch, hm.getOrDefault(ch, 0)+1);
+		for (char ch : str.toCharArray()) 
+			if(hm.get(ch)==1)
+				return ch;
 		return '\0';
 	}
 }
