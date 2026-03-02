@@ -2,8 +2,10 @@ package InterviewQuestions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class _004_groupAnagrams {
 
@@ -11,9 +13,13 @@ public class _004_groupAnagrams {
 		String[] str = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
 
 		System.out.println(_01_BFA(str));
+		System.out.println(_02_UsingFrequencyArray(str));
 	}
 	
 	public static List<List<String>> _01_BFA(String[] str) {
+		// Time complexity: O(n^2 × k log k)
+		// Space complexity: O(n)
+		
         List<List<String>> result = new ArrayList<>();
 
 		boolean[] visited = new boolean[str.length];
@@ -46,5 +52,22 @@ public class _004_groupAnagrams {
 		Arrays.sort(c2);
 		
 		return Arrays.equals(c1, c2);
+	}
+	
+	public static Collection<List<String>> _02_UsingFrequencyArray(String[] str) {
+		// Time complexity: O(n*k)
+		// Space complexity: O(n)
+		
+		Map<String, List<String>> map = new HashMap<>();
+		for (String word : str) {
+			int[] count = new int[26];
+			for (char ch : word.toCharArray())
+				count[ch-'a']++;
+			
+			String key = Arrays.toString(count);
+			map.putIfAbsent(key, new ArrayList<String>());
+			map.get(key).add(word);
+		}
+		return map.values();
 	}
 }
