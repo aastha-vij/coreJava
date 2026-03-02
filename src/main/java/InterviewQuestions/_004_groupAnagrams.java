@@ -30,7 +30,7 @@ public class _004_groupAnagrams {
 			group.add(str[i]);
 			visited[i] = true;
 			
-			for (int j = 0; j < str.length; j++) {
+			for (int j = i+1; j < str.length; j++) {
 				if(!visited[j] && isAnagram(str[i], str[j])) {
 					group.add(str[j]);
 					visited[j] = true;
