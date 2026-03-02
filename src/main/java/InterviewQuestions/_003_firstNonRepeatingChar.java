@@ -9,6 +9,7 @@ public class _003_firstNonRepeatingChar {
 		String str = "haabfebecd";
 		System.out.println(_01_BFA(str));
 		System.out.println(_02_UsingHashMap(str));
+		System.out.println(_03_Using_FrequencyArray(str));
 
 	}
 	
@@ -41,5 +42,20 @@ public class _003_firstNonRepeatingChar {
 			if(hm.get(ch)==1)
 				return ch;
 		return '\0';
+	}
+	
+	public static char _03_Using_FrequencyArray(String str) {
+		// Time complexity: O(n)
+		// Space complexity: O(n)
+		
+		int[] count = new int[128];
+		for (char ch : str.toCharArray()) {
+			count[ch-'a']++;
+		}
+		for (char ch : str.toCharArray()) {
+			if(count[ch-'a']==1)
+				return ch;
+		}
+		return 0;
 	}
 }
