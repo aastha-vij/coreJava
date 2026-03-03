@@ -16,14 +16,10 @@ public class _005_indicesOfTwoNumbersThatGivesTarget {
 		// Time complexity: O(n^2)
 		// Space complexity: O(1)
 		
-		int[] indexArr = new int[2];
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i+1; j < arr.length; j++) {
-				if(arr[i] + arr[j]==target) {
-					indexArr[0] = i;
-					indexArr[1] = j;
-					return indexArr;
-				}
+				if(arr[i] + arr[j]==target)
+					return new int[] {i, j};
 			}
 		}
 		return new int[0];
