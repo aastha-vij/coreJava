@@ -29,6 +29,12 @@ public class _008_Set_hasUniqueChars {
 		System.out.println(_03_UsingHashset(str3));
 		System.out.println(_03_UsingHashset(str4));
 		System.out.println(_03_UsingHashset(str5));
+		
+		System.out.println(_04_UsingFrequencyArray(str1));
+		System.out.println(_04_UsingFrequencyArray(str2));
+		System.out.println(_04_UsingFrequencyArray(str3));
+		System.out.println(_04_UsingFrequencyArray(str4));
+		System.out.println(_04_UsingFrequencyArray(str5));
 	}
 
 	static boolean _01_BFA(String str) {
@@ -66,6 +72,19 @@ public class _008_Set_hasUniqueChars {
 		for (int i : str.toCharArray()) {
 			if(!hs.add(i))
 				return false;
+		}
+		return true;
+	}
+	
+	static boolean _04_UsingFrequencyArray(String str) {
+		// Time: O(n) 
+		// Space: O(1)
+		
+		boolean[] seen = new boolean[128];
+		for (char ch : str.toCharArray()) {
+			if(seen[ch])
+				return false;
+			seen[ch] = true;
 		}
 		return true;
 	}
