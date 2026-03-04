@@ -2,6 +2,7 @@ package InterviewQuestions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class _012_duplicateElementsArray {
@@ -10,6 +11,7 @@ public class _012_duplicateElementsArray {
 		int[] arr = { 2, 10, 10, 100, 2, 10, 11, 2, 11, 2 }; // 2 10 11
 		System.out.println(_01_BFA(arr));
 		System.out.println(_02_UsingHashMap(arr));
+		System.out.println(_03_UsingHashSet(arr));
 	}
 
 	static List<Integer> _01_BFA(int[] arr) {
@@ -42,6 +44,20 @@ public class _012_duplicateElementsArray {
 		for(int key: hm.keySet()) {
 			if(hm.get(key)>1)
 				duplicates.add(key);
+		}
+		return duplicates;
+	}
+	
+	static HashSet<Integer> _03_UsingHashSet(int[] arr) {
+		// Time complexity: O(n)
+		// Space complexity: O(n)
+		
+		HashSet<Integer> duplicates = new HashSet<>();
+		HashSet<Integer> hs = new HashSet<>();
+
+		for (int num : arr) {
+			if(!hs.add(num))
+				duplicates.add(num);
 		}
 		return duplicates;
 	}
