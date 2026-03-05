@@ -4,6 +4,7 @@ public class _015_smallestElementArray {
     public static void main(String[] args) {
         int[] arr = { 2, 10, 10, 100, 2, 10, 11, 2, 1, 2 }; // 1
         System.out.println(_01_BFA(arr));
+        System.out.println(_02_UsingLinearScan(arr));
     }
 
     static int _01_BFA(int[] arr){
@@ -22,5 +23,17 @@ public class _015_smallestElementArray {
                 return i;
         }
         return 0;
+    }
+
+    static int _02_UsingLinearScan(int[] arr){
+        // Time complexity: O(n)
+        // Space complexity: O(1)
+
+        int smallest = Integer.MAX_VALUE;
+        for(int num : arr){
+            if(num<smallest)
+                smallest = num;
+        }
+        return smallest;
     }
 }
