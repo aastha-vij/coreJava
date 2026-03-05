@@ -5,6 +5,7 @@ public class _014_largestElementArray {
 		int[] arr = { 10, 10, 10, 100, 2, 10, 11, 2, 11, 2 }; // 100
 		System.out.println(_01_BFA(arr));
 		System.out.println(_02_BFA(arr));
+		System.out.println(_03_UsingLinearScan(arr));
 	}
 	
 	static int _01_BFA(int[] arr) {
@@ -39,5 +40,17 @@ public class _014_largestElementArray {
 				return arr[i];
 		}
 		return -1;
+	}
+
+	static int _03_UsingLinearScan(int[] arr){
+		// Time complexity: O(n)
+		// Space complexity: O(1)
+
+		int largest = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num > largest)
+                largest = num;
+        }
+		return largest;
 	}
 }
