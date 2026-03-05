@@ -14,6 +14,9 @@ public class _013_ReverseArray {
 		Stack<Integer> reversedStack = _02_UsingStack(arr);
 		while(!reversedStack.empty())
 			System.out.print(reversedStack.pop()+" ");
+		
+		System.out.println();
+		Arrays.stream(_03_UsingTwoPointer(arr)).forEach(value-> System.out.print(value +" "));
 	}
 
 	static int[] _01_BFA(int[] arr) {
@@ -35,5 +38,22 @@ public class _013_ReverseArray {
 		for (int num : arr)
 			st.push(num);
 		return st;
+	}
+	
+	static int[] _03_UsingTwoPointer(int[] arr) {
+		// Time complexity: O(n)
+		// Space complexity: O(1)
+		
+		int left = 0;
+		int right = arr.length-1;
+		int temp;
+		while(left<right) {
+			temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
+			left++;
+			right--;
+		}
+		return arr;
 	}
 }
