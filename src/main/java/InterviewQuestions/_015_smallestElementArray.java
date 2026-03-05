@@ -1,10 +1,13 @@
 package InterviewQuestions;
 
+import java.util.TreeSet;
+
 public class _015_smallestElementArray {
     public static void main(String[] args) {
         int[] arr = { 2, 10, 10, 100, 2, 10, 11, 2, 1, 2 }; // 1
         System.out.println(_01_BFA(arr));
         System.out.println(_02_UsingLinearScan(arr));
+        System.out.println(_03_UsingTreeSet(arr));
     }
 
     static int _01_BFA(int[] arr){
@@ -35,5 +38,16 @@ public class _015_smallestElementArray {
                 smallest = num;
         }
         return smallest;
+    }
+
+    static int _03_UsingTreeSet(int[] arr){
+        // Time complexity: O(nlog(n))
+        // Space complexity: O(n)
+
+        TreeSet<Integer> ts = new TreeSet<>();
+        for (int num : arr) {
+            ts.add(num);
+        }
+        return ts.first();
     }
 }
