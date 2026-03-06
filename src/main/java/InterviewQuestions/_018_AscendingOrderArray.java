@@ -6,6 +6,11 @@ public class _018_AscendingOrderArray {
     public static void main(String[] args){
         int[] arr1 = new int[] { 5, 2, 8, 7, 1 }; // 1 2 5 7 8
         Arrays.stream(_01_BFA(arr1)).forEach(value -> System.out.print(value+ " "));
+
+        System.out.println();
+
+        int[] arr2 = new int[] { 5, 2, 8, 7, 1 }; // 1 2 5 7 8
+        Arrays.stream(_02_UsingArraySort(arr2)).forEach(value -> System.out.print(value+ " "));
     }
 
     static int[] _01_BFA(int[] arr){
@@ -21,6 +26,14 @@ public class _018_AscendingOrderArray {
                 }
             }
         }
+        return arr;
+    }
+
+    static int[] _02_UsingArraySort(int[] arr){
+        // Time complexity: O(nlog(n))
+        // Space complexity: O(nlog(n))
+
+        Arrays.sort(arr);
         return arr;
     }
 }
