@@ -9,6 +9,9 @@ public class _021_secondSmallest_LargestNumberArray {
         }
 
         static int[] _01_Using_Linear_Scan(int[] arr){
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+
             int smallest = Integer.MAX_VALUE;
             int secondSmallest = Integer.MAX_VALUE;
 
