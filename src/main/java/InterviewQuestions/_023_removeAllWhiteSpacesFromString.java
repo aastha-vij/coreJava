@@ -5,6 +5,7 @@ public class _023_removeAllWhiteSpacesFromString {
         String str = "Hello World 123";
         System.out.println(_01_UsingReplace(str));
         System.out.println(_02_UsingReplaceAll(str));
+        System.out.println(_03_UsingCharArray(str));
     }
 
     static String _01_UsingReplace(String str){
@@ -19,5 +20,17 @@ public class _023_removeAllWhiteSpacesFromString {
         // Space Complexity: O(n)
 
         return str.replaceAll("\\s", "");
+    }
+
+    static String _03_UsingCharArray(String str){
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+
+        StringBuilder sb = new StringBuilder();
+        for(char ch : str.toCharArray()){
+            if(ch!=' ')
+                sb.append(ch);
+        }
+        return sb.toString();
     }
 }
