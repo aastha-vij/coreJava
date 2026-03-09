@@ -10,6 +10,9 @@ public class _030_removeLeading_And_Trailing_Zeros {
 
         System.out.println(_02_Using_Two_Pointer(str1));
         System.out.println(_02_Using_Two_Pointer(str2));
+
+        System.out.println(_03_Using_RegX(str1));
+        System.out.println(_03_Using_RegX(str2));
     }
 
     static String _01_Using_subString(String str) {
@@ -47,5 +50,12 @@ public class _030_removeLeading_And_Trailing_Zeros {
             end--;
 
         return str.substring(start, end+1);
+    }
+
+    static String _03_Using_RegX(String str){
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+
+        return str.replaceAll("^0+|0+$", "");
     }
 }
