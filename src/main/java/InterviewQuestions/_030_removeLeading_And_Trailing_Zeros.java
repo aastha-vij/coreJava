@@ -7,6 +7,9 @@ public class _030_removeLeading_And_Trailing_Zeros {
 
         System.out.println(_01_Using_subString(str1));
         System.out.println(_01_Using_subString(str2));
+
+        System.out.println(_02_Using_Two_Pointer(str1));
+        System.out.println(_02_Using_Two_Pointer(str2));
     }
 
     static String _01_Using_subString(String str) {
@@ -27,6 +30,22 @@ public class _030_removeLeading_And_Trailing_Zeros {
                 break;
             }
         }
+        return str.substring(start, end+1);
+    }
+
+    static String _02_Using_Two_Pointer(String str){
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+
+        int start = 0;
+        int end = str.length()-1;
+
+        while(start<end && str.charAt(start) == '0')
+            start++;
+
+        while(end> start && str.charAt(end) == '0')
+            end--;
+
         return str.substring(start, end+1);
     }
 }
