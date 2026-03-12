@@ -12,7 +12,7 @@ public class _034_fibonacci_Series {
     static List<Integer> _01_BFA(int num){
         // Time complexity: O(n)
         // Space complexity: O(1)
-        
+
         int sum = 0, a = 1, b = 1;
         List<Integer> fib = new ArrayList<>();
         for (int i = 1; i <= num; i++) {
