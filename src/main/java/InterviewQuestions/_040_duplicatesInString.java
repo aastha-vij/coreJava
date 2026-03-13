@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class _040_duplicatesInString {
     public static void main(String[] args) {
-        String str = "Great responsibility"; // r e t s i
+        String str = "Great responsib ility"; // r e t s i
         System.out.println(_01_BFA(str));
         System.out.println(_02_UsingHashSet(str));
     }
@@ -14,6 +14,7 @@ public class _040_duplicatesInString {
         // Space complexity: O(n)
 
         HashSet<Character> hs = new HashSet<>();
+        str = str.replaceAll("\\s", "");
         for (int i = 0; i < str.length(); i++) {
             for (int j = i+1; j < str.length(); j++) {
                 if (str.charAt(i) == str.charAt(j))
@@ -30,9 +31,11 @@ public class _040_duplicatesInString {
         HashSet<Character> hs = new HashSet<>();
         HashSet<Character> duplicates = new HashSet<>();
 
-        for (char ch : str.toCharArray()){
-            if (!hs.add(ch))
-                duplicates.add(ch);
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') {
+                if (!hs.add(ch))
+                    duplicates.add(ch);
+            }
         }
         return duplicates;
     }
