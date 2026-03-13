@@ -6,6 +6,7 @@ public class _039_countNumber_Of_Characters_In_String {
     public static void main(String[] args) {
         String str = "The best of both worlds"; // 19
         System.out.println(_01_BFA(str));
+        System.out.println(_02_UsingReplaceAll(str));
     }
 
     static int _01_BFA(String str){
@@ -18,5 +19,12 @@ public class _039_countNumber_Of_Characters_In_String {
                 count++;
         }
         return count;
+    }
+
+    static int _02_UsingReplaceAll (String str) {
+        // Time complexity: O(n)
+        // Space complexity: O(n)
+
+        return str.replaceAll("\\s", "").length();
     }
 }
