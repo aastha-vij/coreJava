@@ -6,6 +6,7 @@ public class _041_swapTwoNumbers {
         int num2 = 24;
         _01_UsingTempVariable(num1, num2);
         _02_Without_Temp_Variable(num1, num2);
+        _03_UsingArray(num1, num2);
     }
 
     static void _01_UsingTempVariable (int num1, int num2) {
@@ -36,6 +37,23 @@ public class _041_swapTwoNumbers {
         num1 = num1 + num2; // 36
         num2 = num1 - num2; // 36 - 24 = 12
         num1 = num1 - num2; // 36 - 12 = 24
+
+        System.out.println("After Swap: ");
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+    }
+
+    static void _03_UsingArray (int num1, int num2) {
+        // Time complexity: O(1)
+        // Space complexity: O(1)
+
+        System.out.println("Before Swap: ");
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+
+        int[] arr = {num1, num2};
+        num1 = arr[1];
+        num2 = arr[0];
 
         System.out.println("After Swap: ");
         System.out.println("num1: " + num1);
