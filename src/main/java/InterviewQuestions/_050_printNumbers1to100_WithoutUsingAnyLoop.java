@@ -1,10 +1,12 @@
 package InterviewQuestions;
 
+import java.util.stream.IntStream;
+
 public class _050_printNumbers1to100_WithoutUsingAnyLoop {
 
     public static void main(String[] args) {
         _01_Using_Recursion(1);
-
+        _02_UsingStream();
     }
 
     static void _01_Using_Recursion(int n) {
@@ -15,5 +17,12 @@ public class _050_printNumbers1to100_WithoutUsingAnyLoop {
             System.out.println(n);
             _01_Using_Recursion(n+1);
         }
+    }
+
+    static void _02_UsingStream (){
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
+        IntStream.rangeClosed(1,100).forEach(value-> System.out.println(value));
     }
 }
