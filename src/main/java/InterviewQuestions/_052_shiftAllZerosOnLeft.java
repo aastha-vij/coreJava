@@ -25,6 +25,9 @@ public class _052_shiftAllZerosOnLeft {
     }
 
     private static int[] _02_Using_InPlaceApproach(int[] arr) {
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
         int index = arr.length-1;
         for (int i = arr.length-1; i >=0 ; i--) {
             if(arr[i] != 0)
