@@ -13,6 +13,7 @@ public class _053_iterateThroughHashMap {
         _01_Using_EntrySet(hm);
         _02_Using_KeySet(hm);
         _03_Using_Values(hm);
+        _04_Using_ForEach(hm);
     }
 
     static void _01_Using_EntrySet(HashMap<String, String> hm){
@@ -37,4 +38,12 @@ public class _053_iterateThroughHashMap {
         for (String value : hm.values())
             System.out.println("Value: "+value);
     }
+
+    static void _04_Using_ForEach(HashMap<String, String> hm) {
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
+        hm.forEach((key, value)-> System.out.println("Key: "+key +", Value: "+value));
+    }
 }
+
