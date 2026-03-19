@@ -13,6 +13,7 @@ public class _054_convertHashMap_To_ArrayList {
         hm.put("Australia", "Canberra");
 
         System.out.println(_01_Convert_EntriesToArrayList(hm));
+        System.out.println(_02_Convert_KeysToArrayList(hm));
     }
 
     static ArrayList<Map.Entry<String, String>> _01_Convert_EntriesToArrayList(HashMap<String, String> hm ){
@@ -20,5 +21,12 @@ public class _054_convertHashMap_To_ArrayList {
         // Space Complexity: O(n)
 
         return new ArrayList<>(hm.entrySet());
+    }
+
+    static ArrayList<String> _02_Convert_KeysToArrayList(HashMap<String, String> hm ){
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+
+        return new ArrayList<>(hm.keySet());
     }
 }
