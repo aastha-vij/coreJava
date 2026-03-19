@@ -12,6 +12,7 @@ public class _053_iterateThroughHashMap {
         hm.put("Australia", "Canberra");
         _01_Using_EntrySet(hm);
         _02_Using_KeySet(hm);
+        _03_Using_Values(hm);
     }
 
     static void _01_Using_EntrySet(HashMap<String, String> hm){
@@ -27,5 +28,13 @@ public class _053_iterateThroughHashMap {
 
         for (String key : hm.keySet())
             System.out.println("Key: "+key + ", Value: "+hm.get(key));
+    }
+
+    static void _03_Using_Values(HashMap<String, String> hm){
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
+        for (String value : hm.values())
+            System.out.println("Value: "+value);
     }
 }
