@@ -14,6 +14,7 @@ public class _054_convertHashMap_To_ArrayList {
 
         System.out.println(_01_Convert_EntriesToArrayList(hm));
         System.out.println(_02_Convert_KeysToArrayList(hm));
+        System.out.println(_03_Convert_ValuesToArrayList(hm));
     }
 
     static ArrayList<Map.Entry<String, String>> _01_Convert_EntriesToArrayList(HashMap<String, String> hm ){
@@ -28,5 +29,12 @@ public class _054_convertHashMap_To_ArrayList {
         // Space Complexity: O(n)
 
         return new ArrayList<>(hm.keySet());
+    }
+
+    static ArrayList<String> _03_Convert_ValuesToArrayList(HashMap<String, String> hm ){
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+
+        return new ArrayList<>(hm.values());
     }
 }
