@@ -7,14 +7,15 @@ public class _055_Reverse_First_Half_Array {
     public static void main(String[] args) {
         int[] arr1 = new int[]{1, 2, 3, 4, 5, 6, 7}; // {3,2,1,4,5,6,7}
         int[] arr2 = new int[]{1, 2, 3, 4, 5, 6}; // {3,2,1,4,5,6}
+
         System.out.println(Arrays.toString(_01_BFA(arr1)));
         System.out.println(Arrays.toString(_01_BFA(arr2)));
 
         System.out.println(Arrays.toString(_02_Using_Stack(arr1)));
         System.out.println(Arrays.toString(_02_Using_Stack(arr2)));
 
-        System.out.println(Arrays.toString(_03_Using_Temp(arr1)));
-        System.out.println(Arrays.toString(_03_Using_Temp(arr2)));
+        System.out.println(Arrays.toString(_03_Using_Two_Pointer(arr1)));
+        System.out.println(Arrays.toString(_03_Using_Two_Pointer(arr2)));
     }
 
     static int[] _01_BFA(int[] arr) {
@@ -47,16 +48,19 @@ public class _055_Reverse_First_Half_Array {
         return arr;
     }
 
-    static int[] _03_Using_Temp(int[] arr) {
+    static int[] _03_Using_Two_Pointer(int[] arr) {
         // Time Complexity: O(n)
         // Space Complexity: O(1)
 
-        int temp = 0;
+        int start = 0;
         int mid = arr.length/2-1;
-        for (int i = mid; i >= 0; i--) {
-            temp = arr[i];
-            arr[i] = arr[mid-i];
-            arr[mid-i] = temp;
+        int temp = 0;
+        while (start<mid){
+            temp = arr[start];
+            arr[start] = arr[mid];
+            arr[mid] = temp;
+            start++;
+            mid--;
         }
         return arr;
     }
